@@ -4,6 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import type { Book } from '../models';
 import { formatPrice, languageName, truncate } from '../utils/format';
 
+import { FavouriteButton } from './FavouriteButton';
+
 interface BookCardProps {
   book: Book;
   viewMode: 'list' | 'cards';
@@ -51,6 +53,7 @@ export function BookCard({ book, viewMode, onEdit, onDelete, onPress }: BookCard
         </View>
         {/* Botones de acción: editar y borrar */}
         <View style={styles.listActions}>
+          <FavouriteButton book={book} compact />
           <Pressable
             style={({ pressed }) => [styles.actionButton, styles.editButton, pressed && styles.pressed]}
             onPress={() => onEdit(book)}
@@ -113,6 +116,7 @@ export function BookCard({ book, viewMode, onEdit, onDelete, onPress }: BookCard
       </View>
 
       <View style={styles.cardFooter}>
+        <FavouriteButton book={book} />
         <Pressable
           style={({ pressed }) => [styles.footerButton, styles.footerEdit, pressed && styles.pressed]}
           onPress={() => onEdit(book)}

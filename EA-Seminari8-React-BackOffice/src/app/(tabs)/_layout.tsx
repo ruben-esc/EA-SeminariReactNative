@@ -33,7 +33,17 @@ export default function TabsLayout() {
           title: 'Libros',
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="book-outline" size={size} color={color} />
+            <Ionicons name="book-outline" size={size} color={String(color)} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="favourites"
+        options={{
+          title: 'Favoritos',
+          headerTitle: 'Mis Favoritos',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="star-outline" size={size} color={String(color)} />
           ),
         }}
       />
@@ -43,7 +53,7 @@ export default function TabsLayout() {
           title: 'Autores',
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="people-outline" size={size} color={color} />
+            <Ionicons name="people-outline" size={size} color={String(color)} />
           ),
         }}
       />
@@ -53,7 +63,7 @@ export default function TabsLayout() {
           title: 'Permisos',
           headerTitle: 'Permisos Nativos',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="shield-checkmark-outline" size={size} color={color} />
+            <Ionicons name="shield-checkmark-outline" size={size} color={String(color)} />
           ),
         }}
       />
@@ -63,7 +73,7 @@ export default function TabsLayout() {
           title: 'Teoría',
           headerTitle: 'React Native vs Web',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="information-circle-outline" size={size} color={color} />
+            <Ionicons name="information-circle-outline" size={size} color={String(color)} />
           ),
         }}
       />
